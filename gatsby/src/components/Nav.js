@@ -5,14 +5,12 @@ import Logo from './Logo';
 
 const NavStyles = styled.nav`
   margin-bottom: 3rem;
-
-  .logo {
-    transform: translateY(-25%);
-  }
-
   ul {
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-gap: 2rem;
     text-align: center;
     list-style: none;
     display: grid;
@@ -21,7 +19,6 @@ const NavStyles = styled.nav`
     align-items: center;
     margin-top: -6rem;
   }
-
   li {
     --rotate: -2deg;
     transform: rotate(var(--rotate));
@@ -33,22 +30,24 @@ const NavStyles = styled.nav`
       --rotate: -2.5deg;
     }
     &:nth-child(4) {
-      --rotate: -2.5deg;
+      --rotate: 2.5deg;
     }
     &:hover {
       --rotate: 3deg;
     }
   }
-
   a {
     font-size: 3rem;
     text-decoration: none;
     &:hover {
       color: var(--red);
     }
-    ${'' /* &[aria-current='page'] {
+    /*
+      If the link matches the current page, add highlight
+    */
+    &[aria-current='page'] {
       color: var(--red);
-    } */}
+    }
   }
 `;
 
@@ -57,10 +56,10 @@ export default function Nav() {
     <NavStyles>
       <ul>
         <li>
-          <Link to="/">Hot Now</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/pizzas">Pizza Menu</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
           <Link to="/">
@@ -68,10 +67,10 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="/slicemasters">SliceMasters</Link>
+          <Link to="/offerings">Offerings</Link>
         </li>
         <li>
-          <Link to="/order">Order Ahead!</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </NavStyles>

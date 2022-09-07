@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-export default function FourOhFourPage() {
-  return <p>Hey that page didn't exist :(</p>;
-}
+const NotFoundPage = () => <p>Oops couldn't find this page</p>;
+
+export default NotFoundPage;
+
+export const Head = () => <title>Not found</title>;
